@@ -1,0 +1,276 @@
+[gd_scene format=3 uid="uid://byi0fwyygftdr"]
+
+[ext_resource type="Script" uid="uid://b5146k6hjdny8" path="res://Scripts/LabHUD.gd" id="1_hud"]
+[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://Scenes/QuizStation.tscn" id="3_station"]
+[ext_resource type="Texture2D" uid="uid://bjmbp01y8031y" path="res://Textures/Ground.jpg" id="4_ground"]
+[ext_resource type="Texture2D" uid="uid://d0g8okfahxpud" path="res://Textures/Wall.png" id="5_wall"]
+[ext_resource type="Texture2D" uid="uid://cjshd0s3wqvj7" path="res://Textures/SolarSystem.jpg" id="6_solar"]
+[ext_resource type="Texture2D" uid="uid://jptgif2e2jua" path="res://Textures/CatPoster.webp" id="7_cat"]
+
+[sub_resource type="Environment" id="Env_1"]
+background_mode = 1
+background_color = Color(0.12, 0.14, 0.18, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.45, 0.47, 0.52, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 3
+glow_enabled = true
+glow_intensity = 0.4
+glow_bloom = 0.08
+
+[sub_resource type="StandardMaterial3D" id="M_Floor"]
+albedo_texture = ExtResource("4_ground")
+metallic = 0.1
+roughness = 0.7
+uv1_scale = Vector3(8, 6, 1)
+
+[sub_resource type="StandardMaterial3D" id="M_Ceil"]
+albedo_color = Color(0.9, 0.9, 0.92, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="M_Wall"]
+albedo_texture = ExtResource("5_wall")
+roughness = 0.9
+uv1_scale = Vector3(8, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="M_Bench"]
+albedo_color = Color(0.26, 0.28, 0.32, 1)
+metallic = 0.45
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="M_Fixture"]
+emission_enabled = true
+emission = Color(1, 0.97, 0.9, 1)
+emission_energy_multiplier = 1.6
+
+[sub_resource type="BoxMesh" id="Box_Fixture"]
+material = SubResource("M_Fixture")
+size = Vector3(1.6, 0.1, 1.6)
+
+[sub_resource type="StandardMaterial3D" id="M_Glass"]
+albedo_color = Color(0.5, 0.8, 0.95, 0.85)
+roughness = 0.1
+
+[sub_resource type="CylinderMesh" id="Cyl_Beaker"]
+material = SubResource("M_Glass")
+top_radius = 0.12
+bottom_radius = 0.12
+height = 0.4
+
+[sub_resource type="SphereMesh" id="Sph_Decor"]
+material = SubResource("M_Glass")
+radius = 0.18
+height = 0.36
+
+[sub_resource type="StandardMaterial3D" id="M_PosterA"]
+albedo_texture = ExtResource("6_solar")
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="Box_PosterZ"]
+material = SubResource("M_PosterA")
+size = Vector3(1.6, 1, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="M_PosterB"]
+albedo_texture = ExtResource("7_cat")
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="Box_PosterX"]
+material = SubResource("M_PosterB")
+size = Vector3(0.05, 1, 1.6)
+
+[node name="Lab" type="Node3D" unique_id=1336798725]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1223266624]
+environment = SubResource("Env_1")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1339768315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(20, 0.2, 14)
+material = SubResource("M_Floor")
+
+[node name="Ceiling" type="CSGBox3D" parent="." unique_id=1853965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
+use_collision = true
+size = Vector3(20, 0.2, 14)
+material = SubResource("M_Ceil")
+
+[node name="Wall_N" type="CSGBox3D" parent="." unique_id=1917525978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -7)
+use_collision = true
+size = Vector3(20, 4, 0.4)
+material = SubResource("M_Wall")
+
+[node name="Wall_S" type="CSGBox3D" parent="." unique_id=1993750686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7)
+use_collision = true
+size = Vector3(20, 4, 0.4)
+material = SubResource("M_Wall")
+
+[node name="Wall_W" type="CSGBox3D" parent="." unique_id=1627796926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 0)
+use_collision = true
+size = Vector3(0.4, 4, 14)
+material = SubResource("M_Wall")
+
+[node name="Wall_E" type="CSGBox3D" parent="." unique_id=151145249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0)
+use_collision = true
+size = Vector3(0.4, 4, 14)
+material = SubResource("M_Wall")
+
+[node name="Divider" type="CSGBox3D" parent="." unique_id=1204429150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4.5)
+use_collision = true
+size = Vector3(0.4, 4, 5)
+material = SubResource("M_Wall")
+
+[node name="Bench_W" type="CSGBox3D" parent="." unique_id=1590649414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4, 0.45, 0)
+use_collision = true
+size = Vector3(0.9, 0.9, 11)
+material = SubResource("M_Bench")
+
+[node name="Bench_E" type="CSGBox3D" parent="." unique_id=328480587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4, 0.45, 0)
+use_collision = true
+size = Vector3(0.9, 0.9, 11)
+material = SubResource("M_Bench")
+
+[node name="Bench_N" type="CSGBox3D" parent="." unique_id=1853588555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.45, -6.4)
+use_collision = true
+size = Vector3(8, 0.9, 0.9)
+material = SubResource("M_Bench")
+
+[node name="Bench_Center" type="CSGBox3D" parent="." unique_id=1997445773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.45, 4.5)
+use_collision = true
+size = Vector3(6, 0.9, 0.9)
+material = SubResource("M_Bench")
+
+[node name="Shelf_S1" type="CSGBox3D" parent="." unique_id=467974038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.6, 6.6)
+use_collision = true
+size = Vector3(5, 0.15, 0.6)
+material = SubResource("M_Bench")
+
+[node name="Shelf_S2" type="CSGBox3D" parent="." unique_id=219501608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.6, 6.6)
+use_collision = true
+size = Vector3(5, 0.15, 0.6)
+material = SubResource("M_Bench")
+
+[node name="Light0" type="OmniLight3D" parent="." unique_id=52944418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.7, -3.5)
+light_energy = 2.2
+omni_range = 11.0
+
+[node name="Light1" type="OmniLight3D" parent="." unique_id=668602682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.7, -3.5)
+light_energy = 2.2
+omni_range = 11.0
+
+[node name="Light2" type="OmniLight3D" parent="." unique_id=2102363821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.7, 3.5)
+light_energy = 2.2
+omni_range = 11.0
+
+[node name="Light3" type="OmniLight3D" parent="." unique_id=1089835193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.7, 3.5)
+light_energy = 2.2
+omni_range = 11.0
+
+[node name="Fixture0" type="MeshInstance3D" parent="." unique_id=372208505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.95, -3.5)
+mesh = SubResource("Box_Fixture")
+
+[node name="Fixture1" type="MeshInstance3D" parent="." unique_id=819771568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.95, -3.5)
+mesh = SubResource("Box_Fixture")
+
+[node name="Fixture2" type="MeshInstance3D" parent="." unique_id=2057512291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.95, 3.5)
+mesh = SubResource("Box_Fixture")
+
+[node name="Fixture3" type="MeshInstance3D" parent="." unique_id=1554177995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.95, 3.5)
+mesh = SubResource("Box_Fixture")
+
+[node name="Beaker0" type="MeshInstance3D" parent="." unique_id=866283734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3, 1.1, -2)
+mesh = SubResource("Cyl_Beaker")
+
+[node name="Beaker1" type="MeshInstance3D" parent="." unique_id=514639708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3, 1.1, 2)
+mesh = SubResource("Cyl_Beaker")
+
+[node name="Beaker2" type="MeshInstance3D" parent="." unique_id=483611123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.3, 1.1, 1.5)
+mesh = SubResource("Cyl_Beaker")
+
+[node name="Decor0" type="MeshInstance3D" parent="." unique_id=1534663536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.08, -6.4)
+mesh = SubResource("Sph_Decor")
+
+[node name="Poster_N" type="MeshInstance3D" parent="." unique_id=429511722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.4, -6.78)
+mesh = SubResource("Box_PosterZ")
+
+[node name="Poster_W" type="MeshInstance3D" parent="." unique_id=226414741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.78, 2.4, -4)
+mesh = SubResource("Box_PosterX")
+
+[node name="Player" parent="." unique_id=911819108 instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=73166068 groups=["HUD"]]
+script = ExtResource("1_hud")
+
+[node name="Station0" parent="." unique_id=426902021 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4, 0.9, -4)
+objectName = "Bico de Bunsen"
+data_file = "res://Data/bico_de_bunsen.json"
+tint = Color(0.95, 0.38, 0.1, 1)
+
+[node name="Station1" parent="." unique_id=1142192349 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4, 0.9, 0)
+objectName = "Béquer"
+data_file = "res://Data/bequer.json"
+tint = Color(0.2, 0.5, 0.95, 1)
+
+[node name="Station2" parent="." unique_id=584298861 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.9, 4.5)
+objectName = "Termômetro"
+data_file = "res://Data/termometro.json"
+tint = Color(0.9, 0.15, 0.15, 1)
+
+[node name="Station3" parent="." unique_id=1994129313 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.400001, 0.9, 3.8)
+objectName = "Pistão / Cilindro"
+data_file = "res://Data/pistao_cilindro.json"
+
+[node name="Station4" parent="." unique_id=1433685345 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.9, -6.4)
+objectName = "Calorímetro"
+data_file = "res://Data/calorimetro.json"
+tint = Color(0.72, 0.5, 0.22, 1)
+
+[node name="Station5" parent="." unique_id=1924078993 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.9, -6.4)
+objectName = "Manômetro"
+data_file = "res://Data/manometro.json"
+tint = Color(0.28, 0.72, 0.32, 1)
+
+[node name="Station6" parent="." unique_id=2039451232 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4, 0.9, 0)
+objectName = "Condensador"
+data_file = "res://Data/condensador.json"
+tint = Color(0.2, 0.82, 0.85, 1)
+
+[node name="Station7" parent="." unique_id=565758196 instance=ExtResource("3_station")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4, 0.9, 4.5)
+objectName = "Máquina Térmica"
+data_file = "res://Data/maquina_termica.json"
+tint = Color(0.78, 0.28, 0.85, 1)

@@ -1,0 +1,35 @@
+{
+	"name": "Bico de Bunsen",
+	"questions": [
+		{
+			"q": "O que é combustão?",
+			"options": [
+				"Absorção de calor por convecção",
+				"Reação exotérmica entre combustível e O₂",
+				"Mudança do estado sólido para líquido",
+				"Processo de resfriamento adiabático"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A chama AZUL do Bico de Bunsen indica:",
+			"options": [
+				"Combustão incompleta, mais fria (~400°C)",
+				"Ausência de oxigênio na mistura",
+				"Combustão completa, mais quente (~1500°C)",
+				"Temperatura abaixo de 300°C"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Por que aquecemos recipientes de baixo para cima no laboratório?",
+			"options": [
+				"Porque o fogo desce por gravidade",
+				"Para evitar quebra do recipiente",
+				"Para criar correntes de convecção que distribuem o calor",
+				"Para aumentar a pressão interna"
+			],
+			"correct": 2
+		}
+	]
+}

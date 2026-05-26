@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scripts/QuizStation.gd" id="1_station"]
+
+[sub_resource type="BoxMesh" id="Box_1"]
+size = Vector3(0.7, 0.9, 0.7)
+
+[sub_resource type="BoxShape3D" id="Shape_1"]
+size = Vector3(0.7, 0.9, 0.7)
+
+[node name="QuizStation" type="StaticBody3D"]
+script = ExtResource("1_station")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("Box_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("Shape_1")

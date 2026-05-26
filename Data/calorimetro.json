@@ -1,0 +1,35 @@
+{
+	"name": "Calorímetro",
+	"questions": [
+		{
+			"q": "Calor específico (c) é definido como:",
+			"options": [
+				"O calor total armazenado em um objeto",
+				"A temperatura máxima atingível por uma substância",
+				"A energia para aquecer 1 kg da substância em 1°C",
+				"A velocidade de troca de calor entre corpos"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Em um calorímetro ideal, o princípio utilizado é:",
+			"options": [
+				"Calor cedido = Calor absorvido",
+				"Pressão × Volume = constante",
+				"Entropia do sistema sempre aumenta",
+				"Temperatura é sempre conservada"
+			],
+			"correct": 0
+		},
+		{
+			"q": "Se ΔT dobra (mesma massa e substância), o calor Q:",
+			"options": [
+				"Reduz à metade",
+				"Permanece igual",
+				"Dobra",
+				"Quadruplica"
+			],
+			"correct": 2
+		}
+	]
+}

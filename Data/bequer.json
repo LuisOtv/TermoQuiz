@@ -1,0 +1,35 @@
+{
+	"name": "Béquer",
+	"questions": [
+		{
+			"q": "A que temperatura a água ferve ao nível do mar (1 atm)?",
+			"options": [
+				"0°C  (273 K)",
+				"37°C  (310 K)",
+				"100°C  (373 K)",
+				"212°C  (485 K)"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Na fórmula Q = m·c·ΔT, o símbolo 'c' representa:",
+			"options": [
+				"Calor total absorvido",
+				"Calor específico da substância",
+				"Capacidade do recipiente",
+				"Velocidade da reação"
+			],
+			"correct": 1
+		},
+		{
+			"q": "O calor específico da água vale aproximadamente:",
+			"options": [
+				"100 J/(kg·°C)",
+				"418 J/(kg·°C)",
+				"1000 J/(kg·°C)",
+				"4186 J/(kg·°C)"
+			],
+			"correct": 3
+		}
+	]
+}

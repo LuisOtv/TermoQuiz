@@ -1,0 +1,35 @@
+{
+	"name": "Pistão / Cilindro",
+	"questions": [
+		{
+			"q": "A 1ª Lei da Termodinâmica pode ser expressa como:",
+			"options": [
+				"ΔU = Q + W",
+				"ΔU = W − Q",
+				"ΔU = Q × W",
+				"ΔU = Q − W"
+			],
+			"correct": 3
+		},
+		{
+			"q": "Em um processo ADIABÁTICO:",
+			"options": [
+				"Q = 0  (sem troca de calor)",
+				"ΔT = 0  (temperatura constante)",
+				"ΔP = 0  (pressão constante)",
+				"ΔV = 0  (volume constante)"
+			],
+			"correct": 0
+		},
+		{
+			"q": "O trabalho em um processo ISOBÁRICO (pressão constante) é:",
+			"options": [
+				"W = Q·ΔT",
+				"W = m·c·ΔT",
+				"W = P·ΔV",
+				"W = F / A"
+			],
+			"correct": 2
+		}
+	]
+}

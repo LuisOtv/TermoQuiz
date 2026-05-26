@@ -1,0 +1,35 @@
+{
+	"name": "Condensador",
+	"questions": [
+		{
+			"q": "Calor latente é a energia trocada:",
+			"options": [
+				"Ao aumentar a temperatura de um sólido",
+				"Durante a mudança de estado, sem variar temperatura",
+				"Apenas em processos adiabáticos",
+				"Ao misturar dois líquidos de temperaturas distintas"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A condensação é um processo:",
+			"options": [
+				"Endotérmico — absorve calor do ambiente",
+				"Sem troca de calor (adiabático)",
+				"Exotérmico — libera calor para o ambiente",
+				"Que aumenta o volume do sistema"
+			],
+			"correct": 2
+		},
+		{
+			"q": "A diferença entre evaporação e ebulição é:",
+			"options": [
+				"Ebulição ocorre na superfície; evaporação no interior",
+				"São processos fisicamente idênticos",
+				"Evaporação só ocorre a 100°C",
+				"Evaporação ocorre na superfície a qualquer temperatura"
+			],
+			"correct": 3
+		}
+	]
+}

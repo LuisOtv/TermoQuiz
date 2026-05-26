@@ -1,0 +1,35 @@
+{
+	"name": "Máquina Térmica",
+	"questions": [
+		{
+			"q": "A 2ª Lei da Termodinâmica implica que:",
+			"options": [
+				"O calor flui espontaneamente do quente para o frio",
+				"A energia total do universo sempre aumenta",
+				"Nenhum processo produz trabalho útil",
+				"Pressão e volume são diretamente proporcionais"
+			],
+			"correct": 0
+		},
+		{
+			"q": "A eficiência máxima (Carnot) em função das temperaturas (K) é:",
+			"options": [
+				"η = T₁ / T₂",
+				"η = 1 − T₂/T₁",
+				"η = T₁ − T₂",
+				"η = Q₁ × Q₂"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Por que nenhuma máquina real atinge a eficiência de Carnot?",
+			"options": [
+				"O combustível sempre se esgota antes",
+				"A pressão nunca é constante em máquinas reais",
+				"Processos reais são irreversíveis (fricção, condução, etc.)",
+				"O calor específico é variável com a temperatura"
+			],
+			"correct": 2
+		}
+	]
+}

@@ -1,0 +1,35 @@
+{
+	"name": "Manômetro",
+	"questions": [
+		{
+			"q": "A fórmula correta da pressão é:",
+			"options": [
+				"P = m / V",
+				"P = F / A",
+				"P = Q / T",
+				"P = W / t"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A Lei de Boyle (temperatura constante) afirma que:",
+			"options": [
+				"P + V = constante",
+				"P − V = constante",
+				"P / V = constante",
+				"P · V = constante"
+			],
+			"correct": 3
+		},
+		{
+			"q": "1 atm equivale a:",
+			"options": [
+				"1.000 Pa",
+				"9.800 Pa",
+				"760 Pa",
+				"101.325 Pa"
+			],
+			"correct": 3
+		}
+	]
+}

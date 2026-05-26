@@ -1,0 +1,35 @@
+{
+	"name": "Termômetro",
+	"questions": [
+		{
+			"q": "Como converter 27°C para a escala Kelvin?",
+			"options": [
+				"246 K",
+				"327 K",
+				"300 K",
+				"27 K"
+			],
+			"correct": 2
+		},
+		{
+			"q": "O zero absoluto equivale a:",
+			"options": [
+				"0°C",
+				"−100°C",
+				"−200°C",
+				"−273,15°C"
+			],
+			"correct": 3
+		},
+		{
+			"q": "A Lei Zero da Termodinâmica define:",
+			"options": [
+				"A impossibilidade de 100% de eficiência",
+				"O equilíbrio térmico entre sistemas",
+				"A conservação total de energia",
+				"A expansão de gases ideais"
+			],
+			"correct": 1
+		}
+	]
+}
