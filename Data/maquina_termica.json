@@ -30,6 +30,76 @@
 				"O calor específico é variável com a temperatura"
 			],
 			"correct": 2
+		},
+		{
+			"q": "Uma máquina térmica converte:",
+			"options": [
+				"Trabalho em massa",
+				"Calor em trabalho",
+				"Luz em calor",
+				"Massa em volume"
+			],
+			"correct": 1
+		},
+		{
+			"q": "O rendimento de uma máquina térmica é dado por:",
+			"options": [
+				"η = Q_quente / W",
+				"η = W / Q_quente",
+				"η = Q_quente − Q_frio",
+				"η = Q_frio / W"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Por que nenhuma máquina térmica converte TODO o calor em trabalho?",
+			"options": [
+				"Por falta de combustível",
+				"Porque sempre rejeita parte do calor à fonte fria (2ª lei)",
+				"Porque o trabalho é sempre negativo",
+				"Porque a energia não se conserva"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Uma máquina opera entre 600 K e 300 K. O rendimento máximo (Carnot) é:",
+			"options": [
+				"25 %",
+				"50 %",
+				"75 %",
+				"100 %"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Um refrigerador (geladeira):",
+			"options": [
+				"Faz o calor fluir sozinho do frio para o quente",
+				"Usa trabalho para retirar calor do frio e jogá-lo no quente",
+				"Cria energia do nada",
+				"Funciona sem consumir energia"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A fonte FRIA de uma máquina térmica serve para:",
+			"options": [
+				"Fornecer todo o calor de entrada",
+				"Receber o calor não convertido em trabalho",
+				"Aumentar a temperatura da fonte quente",
+				"Eliminar o atrito"
+			],
+			"correct": 1
+		},
+		{
+			"q": "O ciclo de Carnot é formado por:",
+			"options": [
+				"Duas isobáricas e duas isocóricas",
+				"Duas isotérmicas e duas adiabáticas",
+				"Quatro transformações adiabáticas",
+				"Duas isotérmicas e duas isobáricas"
+			],
+			"correct": 1
 		}
 	]
 }

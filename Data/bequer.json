@@ -30,6 +30,76 @@
 				"4186 J/(kg·°C)"
 			],
 			"correct": 3
+		},
+		{
+			"q": "Quanto calor é preciso para aquecer 2 kg de água em 10°C? (c = 4186)",
+			"options": [
+				"≈ 8,4 kJ",
+				"≈ 41,9 kJ",
+				"≈ 83,7 kJ",
+				"≈ 837 kJ"
+			],
+			"correct": 2
+		},
+		{
+			"q": "O alto calor específico da água significa que ela:",
+			"options": [
+				"Esquenta e esfria muito rápido",
+				"Precisa de muita energia para variar sua temperatura",
+				"Não pode ser aquecida",
+				"Armazena pouco calor"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Dobrando a massa de água (mesmo ΔT), o calor necessário:",
+			"options": [
+				"Cai pela metade",
+				"Permanece o mesmo",
+				"Dobra",
+				"Fica quatro vezes maior"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Qual é a principal função do béquer no laboratório?",
+			"options": [
+				"Medir volumes com alta precisão",
+				"Conter, misturar e aquecer líquidos",
+				"Medir a temperatura",
+				"Produzir vácuo"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Qual é a unidade de energia (calor) no Sistema Internacional?",
+			"options": [
+				"Caloria",
+				"Watt",
+				"Joule",
+				"Kelvin"
+			],
+			"correct": 2
+		},
+		{
+			"q": "1 caloria equivale a aproximadamente:",
+			"options": [
+				"1 J",
+				"4,186 J",
+				"100 J",
+				"1000 J"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Usar uma tela/tripé sob o béquer ao aquecer serve para:",
+			"options": [
+				"Aumentar a pressão interna",
+				"Distribuir o calor e evitar o choque térmico",
+				"Acelerar uma reação química",
+				"Medir a massa do líquido"
+			],
+			"correct": 1
 		}
 	]
 }

@@ -15,6 +15,9 @@ signal completed
 func register(id: String) -> void:
 	if not registered.has(id):
 		registered.append(id)
+		# Avisa a HUD para que o contador/barra reflita o total assim que as
+		# estações entram na cena (senão começa em 0/0 em vez de 0/8).
+		updated.emit()
 
 
 func set_result(id: String, correct: int, total: int) -> void:

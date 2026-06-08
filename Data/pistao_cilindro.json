@@ -30,6 +30,76 @@
 				"W = F / A"
 			],
 			"correct": 2
+		},
+		{
+			"q": "Em um processo ISOTÉRMICO ocorre:",
+			"options": [
+				"Q = 0  (sem troca de calor)",
+				"ΔT = 0  (temperatura constante)",
+				"ΔV = 0  (volume constante)",
+				"ΔP = 0  (pressão constante)"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Em um processo ISOVOLUMÉTRICO (ΔV = 0), o trabalho realizado é:",
+			"options": [
+				"Máximo",
+				"Igual a P·V",
+				"Nulo (zero)",
+				"Sempre negativo"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Quando o gás se EXPANDE e empurra o pistão, o trabalho realizado PELO gás é:",
+			"options": [
+				"Negativo",
+				"Nulo",
+				"Positivo",
+				"Indefinido"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Na COMPRESSÃO adiabática de um gás, a temperatura:",
+			"options": [
+				"Aumenta",
+				"Diminui",
+				"Permanece constante",
+				"Vai a zero"
+			],
+			"correct": 0
+		},
+		{
+			"q": "Em uma EXPANSÃO adiabática (Q = 0), a temperatura do gás:",
+			"options": [
+				"Aumenta",
+				"Diminui",
+				"Não muda",
+				"Dobra"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A energia interna de um gás ideal depende essencialmente:",
+			"options": [
+				"Só da pressão",
+				"Só do volume",
+				"Da temperatura",
+				"Da cor do gás"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Um gás recebe 100 J de calor e realiza 40 J de trabalho. Qual é o ΔU?",
+			"options": [
+				"140 J",
+				"60 J",
+				"−60 J",
+				"40 J"
+			],
+			"correct": 1
 		}
 	]
 }

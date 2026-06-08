@@ -30,6 +30,76 @@
 				"Para aumentar a pressão interna"
 			],
 			"correct": 2
+		},
+		{
+			"q": "Uma chama AMARELA no Bico de Bunsen indica:",
+			"options": [
+				"Combustão completa e muito quente",
+				"Combustão incompleta, com pouco ar e fuligem",
+				"Ausência total de combustível",
+				"Temperatura próxima do zero absoluto"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Que tipo de gás normalmente alimenta o Bico de Bunsen?",
+			"options": [
+				"Oxigênio (O₂)",
+				"Gás carbônico (CO₂)",
+				"Um gás combustível (GLP ou gás natural)",
+				"Nitrogênio (N₂)"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Onde fica a região mais quente da chama azul?",
+			"options": [
+				"Na base, junto ao tubo",
+				"No interior do cone azul (zona redutora)",
+				"Logo acima da ponta do cone interno (zona oxidante)",
+				"A temperatura é igual em toda a chama"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Abrir a entrada de ar (anel) na base do bico deixa a chama:",
+			"options": [
+				"Amarela e mais fria",
+				"Azul e mais quente",
+				"Apagada imediatamente",
+				"Sem qualquer alteração"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A combustão COMPLETA do metano (CH₄) produz principalmente:",
+			"options": [
+				"Monóxido de carbono e fuligem",
+				"Gás carbônico (CO₂) e água (H₂O)",
+				"Hidrogênio e oxigênio",
+				"Apenas vapor de água"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A combustão INCOMPLETA é perigosa porque libera:",
+			"options": [
+				"Monóxido de carbono (CO), gás tóxico",
+				"Oxigênio em excesso",
+				"Apenas vapor de água",
+				"Um gás nobre inerte"
+			],
+			"correct": 0
+		},
+		{
+			"q": "O calor que sentimos perto da chama, sem encostar nela, chega por:",
+			"options": [
+				"Condução",
+				"Convecção",
+				"Radiação",
+				"Evaporação"
+			],
+			"correct": 2
 		}
 	]
 }

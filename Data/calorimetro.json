@@ -30,6 +30,76 @@
 				"Quadruplica"
 			],
 			"correct": 2
+		},
+		{
+			"q": "Um calorímetro ideal é, essencialmente:",
+			"options": [
+				"Um recipiente termicamente isolado",
+				"Um medidor de pressão",
+				"Uma fonte de calor",
+				"Um tipo de termômetro"
+			],
+			"correct": 0
+		},
+		{
+			"q": "A capacidade térmica (C) de um corpo é dada por:",
+			"options": [
+				"C = Q / m",
+				"C = m · c",
+				"C = c / m",
+				"C = P · V"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Ao misturar água quente e fria num sistema isolado, a temperatura final é:",
+			"options": [
+				"Maior que a da água quente",
+				"Menor que a da água fria",
+				"Intermediária entre as duas",
+				"Sempre igual a 0°C"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Num calorímetro, o corpo quente ____ calor e o corpo frio ____ calor:",
+			"options": [
+				"recebe / cede",
+				"cede / recebe",
+				"cede / cede",
+				"recebe / recebe"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Quanto calor 1 kg de água (c = 4186) libera ao esfriar 10°C?",
+			"options": [
+				"≈ 4,19 kJ",
+				"≈ 41,9 kJ",
+				"≈ 419 kJ",
+				"≈ 4186 kJ"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Por que um metal esquenta mais rápido que a água sob o mesmo calor?",
+			"options": [
+				"Porque tem maior calor específico",
+				"Porque tem menor calor específico",
+				"Porque tem mais massa",
+				"Porque reflete o calor"
+			],
+			"correct": 1
+		},
+		{
+			"q": "No SI, a unidade de calor específico é:",
+			"options": [
+				"J/(kg·°C)",
+				"J/kg",
+				"W/m²",
+				"°C/kg"
+			],
+			"correct": 0
 		}
 	]
 }

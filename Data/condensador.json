@@ -30,6 +30,76 @@
 				"Evaporação ocorre na superfície a qualquer temperatura"
 			],
 			"correct": 3
+		},
+		{
+			"q": "Qual é a principal função de um condensador?",
+			"options": [
+				"Transformar vapor em líquido (condensar)",
+				"Transformar líquido em vapor",
+				"Aumentar a pressão do gás",
+				"Medir a temperatura do vapor"
+			],
+			"correct": 0
+		},
+		{
+			"q": "Durante a condensação, a temperatura da substância:",
+			"options": [
+				"Aumenta continuamente",
+				"Permanece constante",
+				"Cai a zero",
+				"Dobra"
+			],
+			"correct": 1
+		},
+		{
+			"q": "O calor latente de vaporização da água (~2260 kJ/kg) é a energia para:",
+			"options": [
+				"Aquecer 1 kg de água em 1°C",
+				"Vaporizar 1 kg de água a 100°C",
+				"Congelar 1 kg de água",
+				"Levar a água ao zero absoluto"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A passagem do estado gasoso para o líquido chama-se:",
+			"options": [
+				"Vaporização",
+				"Condensação (liquefação)",
+				"Sublimação",
+				"Fusão"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Para condensar o vapor, o condensador precisa:",
+			"options": [
+				"Fornecer calor ao vapor",
+				"Retirar calor do vapor",
+				"Comprimir o vapor",
+				"Aquecer o vapor"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A solidificação e a condensação são processos:",
+			"options": [
+				"Endotérmicos (absorvem calor)",
+				"Exotérmicos (liberam calor)",
+				"Adiabáticos",
+				"Isotérmicos sem troca de energia"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Enquanto a água pura ferve a 1 atm, a sua temperatura:",
+			"options": [
+				"Sobe acima de 100°C",
+				"Permanece em 100°C",
+				"Cai para 0°C",
+				"Oscila aleatoriamente"
+			],
+			"correct": 1
 		}
 	]
 }

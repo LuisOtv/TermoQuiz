@@ -14,15 +14,20 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Immersive Controller"
+config/name="TermoQuiz"
 config/version="1.0"
 run/main_scene="res://Scenes/Lab.tscn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://tsdjbcj1ixmk"
 
 [autoload]
 
 GameProgress="*res://Scripts/GameProgress.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=720
 
 [editor_plugins]
 
@@ -39,6 +44,10 @@ Interactable=""
 Breakable=""
 Wall=""
 HUD=""
+
+[gui]
+
+theme/custom_font="res://Fonts/Oswald-VariableFont_wght.ttf"
 
 [input]
 

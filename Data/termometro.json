@@ -30,6 +30,76 @@
 				"A expansão de gases ideais"
 			],
 			"correct": 1
+		},
+		{
+			"q": "Quanto é 100°C na escala Kelvin?",
+			"options": [
+				"173 K",
+				"273 K",
+				"373 K",
+				"473 K"
+			],
+			"correct": 2
+		},
+		{
+			"q": "O termômetro de líquido mede temperatura com base:",
+			"options": [
+				"Na massa do líquido interno",
+				"Na dilatação térmica do líquido com a temperatura",
+				"Na pressão atmosférica local",
+				"Na cor do líquido"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Temperatura é uma medida de:",
+			"options": [
+				"Quantidade de calor armazenada",
+				"Energia cinética média das partículas",
+				"Massa total do corpo",
+				"Pressão do gás"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Qual é a diferença entre calor e temperatura?",
+			"options": [
+				"São exatamente a mesma coisa",
+				"Calor é energia em trânsito; temperatura é o grau de agitação das partículas",
+				"Temperatura é energia; calor é massa",
+				"Calor só existe em sólidos"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Uma variação de 1 K corresponde a uma variação de quantos °C?",
+			"options": [
+				"1 °C",
+				"273 °C",
+				"1,8 °C",
+				"100 °C"
+			],
+			"correct": 0
+		},
+		{
+			"q": "Quanto é 50°C em Fahrenheit?  (°F = 9/5·°C + 32)",
+			"options": [
+				"82 °F",
+				"90 °F",
+				"122 °F",
+				"150 °F"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Dois corpos em equilíbrio térmico necessariamente têm:",
+			"options": [
+				"A mesma massa",
+				"A mesma temperatura",
+				"Troca contínua de calor entre si",
+				"Pressões iguais"
+			],
+			"correct": 1
 		}
 	]
 }

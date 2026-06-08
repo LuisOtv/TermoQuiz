@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dwyvlw5ec0j6v"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://dm3l0p0pxuake" path="res://Scripts/Player.gd" id="1_player"]
 
 [sub_resource type="CapsuleShape3D" id="Caps_1"]
 radius = 0.35
