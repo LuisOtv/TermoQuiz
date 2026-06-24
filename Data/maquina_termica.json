@@ -2,104 +2,54 @@
 	"name": "Máquina Térmica",
 	"questions": [
 		{
-			"q": "A 2ª Lei da Termodinâmica implica que:",
+			"q": "Em um diagrama de energia, a diferença entre os reagentes e o topo da curva representa:",
 			"options": [
-				"O calor flui espontaneamente do quente para o frio",
-				"A energia total do universo sempre aumenta",
-				"Nenhum processo produz trabalho útil",
-				"Pressão e volume são diretamente proporcionais"
-			],
-			"correct": 0
-		},
-		{
-			"q": "A eficiência máxima (Carnot) em função das temperaturas (K) é:",
-			"options": [
-				"η = T₁ / T₂",
-				"η = 1 − T₂/T₁",
-				"η = T₁ − T₂",
-				"η = Q₁ × Q₂"
-			],
-			"correct": 1
-		},
-		{
-			"q": "Por que nenhuma máquina real atinge a eficiência de Carnot?",
-			"options": [
-				"O combustível sempre se esgota antes",
-				"A pressão nunca é constante em máquinas reais",
-				"Processos reais são irreversíveis (fricção, condução, etc.)",
-				"O calor específico é variável com a temperatura"
+				"ΔH (variação de entalpia)",
+				"Energia cinética",
+				"Energia de ativação (Ea)",
+				"Entalpia dos produtos"
 			],
 			"correct": 2
 		},
 		{
-			"q": "Uma máquina térmica converte:",
+			"q": "Qual destes processos é exotérmico?",
 			"options": [
-				"Trabalho em massa",
-				"Calor em trabalho",
-				"Luz em calor",
-				"Massa em volume"
+				"Evaporação",
+				"Fusão",
+				"Combustão da gasolina",
+				"Sublimação"
 			],
-			"correct": 1
+			"correct": 2
 		},
 		{
-			"q": "O rendimento de uma máquina térmica é dado por:",
+			"q": "Pela Lei de Hess, se A→B tem ΔH = +50 kJ e B→C tem ΔH = -20 kJ, o ΔH total de A→C é:",
 			"options": [
-				"η = Q_quente / W",
-				"η = W / Q_quente",
-				"η = Q_quente − Q_frio",
-				"η = Q_frio / W"
+				"+70 kJ",
+				"-70 kJ",
+				"+30 kJ",
+				"-30 kJ"
 			],
-			"correct": 1
+			"correct": 2
 		},
 		{
-			"q": "Por que nenhuma máquina térmica converte TODO o calor em trabalho?",
+			"q": "Pela Lei de Hess, se X→Y tem ΔH = +80 kJ e Y→Z tem ΔH = +40 kJ, o ΔH total de X→Z é:",
 			"options": [
-				"Por falta de combustível",
-				"Porque sempre rejeita parte do calor à fonte fria (2ª lei)",
-				"Porque o trabalho é sempre negativo",
-				"Porque a energia não se conserva"
+				"+120 kJ",
+				"+40 kJ",
+				"-120 kJ",
+				"-40 kJ"
 			],
-			"correct": 1
+			"correct": 0
 		},
 		{
-			"q": "Uma máquina opera entre 600 K e 300 K. O rendimento máximo (Carnot) é:",
+			"q": "Ao inverter o sentido de uma reação, o valor do ΔH:",
 			"options": [
-				"25 %",
-				"50 %",
-				"75 %",
-				"100 %"
+				"Dobra",
+				"Permanece igual",
+				"Troca de sinal",
+				"Torna-se zero"
 			],
-			"correct": 1
-		},
-		{
-			"q": "Um refrigerador (geladeira):",
-			"options": [
-				"Faz o calor fluir sozinho do frio para o quente",
-				"Usa trabalho para retirar calor do frio e jogá-lo no quente",
-				"Cria energia do nada",
-				"Funciona sem consumir energia"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A fonte FRIA de uma máquina térmica serve para:",
-			"options": [
-				"Fornecer todo o calor de entrada",
-				"Receber o calor não convertido em trabalho",
-				"Aumentar a temperatura da fonte quente",
-				"Eliminar o atrito"
-			],
-			"correct": 1
-		},
-		{
-			"q": "O ciclo de Carnot é formado por:",
-			"options": [
-				"Duas isobáricas e duas isocóricas",
-				"Duas isotérmicas e duas adiabáticas",
-				"Quatro transformações adiabáticas",
-				"Duas isotérmicas e duas isobáricas"
-			],
-			"correct": 1
+			"correct": 2
 		}
 	]
 }

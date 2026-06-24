@@ -2,104 +2,54 @@
 	"name": "Calorímetro",
 	"questions": [
 		{
-			"q": "Calor específico (c) é definido como:",
+			"q": "Os reagentes têm entalpia de 500 kJ e os produtos 200 kJ. Qual é o ΔH da reação?",
 			"options": [
-				"O calor total armazenado em um objeto",
-				"A temperatura máxima atingível por uma substância",
-				"A energia para aquecer 1 kg da substância em 1°C",
-				"A velocidade de troca de calor entre corpos"
+				"+300 kJ",
+				"-300 kJ",
+				"+700 kJ",
+				"-700 kJ"
 			],
-			"correct": 2
+			"correct": 1
 		},
 		{
-			"q": "Em um calorímetro ideal, o princípio utilizado é:",
+			"q": "Em uma reação, Hprodutos = 350 kJ e Hreagentes = 500 kJ. Qual é o ΔH?",
 			"options": [
-				"Calor cedido = Calor absorvido",
-				"Pressão × Volume = constante",
-				"Entropia do sistema sempre aumenta",
-				"Temperatura é sempre conservada"
+				"-150 kJ",
+				"+150 kJ",
+				"-850 kJ",
+				"+850 kJ"
 			],
 			"correct": 0
 		},
 		{
-			"q": "Se ΔT dobra (mesma massa e substância), o calor Q:",
+			"q": "Uma reação absorve 120 kJ. O valor do ΔH é:",
 			"options": [
-				"Reduz à metade",
-				"Permanece igual",
-				"Dobra",
-				"Quadruplica"
+				"-120 kJ",
+				"0 kJ",
+				"+120 kJ",
+				"+240 kJ"
 			],
 			"correct": 2
 		},
 		{
-			"q": "Um calorímetro ideal é, essencialmente:",
+			"q": "Uma reação libera 90 kJ. O sinal do ΔH é:",
 			"options": [
-				"Um recipiente termicamente isolado",
-				"Um medidor de pressão",
-				"Uma fonte de calor",
-				"Um tipo de termômetro"
-			],
-			"correct": 0
-		},
-		{
-			"q": "A capacidade térmica (C) de um corpo é dada por:",
-			"options": [
-				"C = Q / m",
-				"C = m · c",
-				"C = c / m",
-				"C = P · V"
+				"Positivo",
+				"Negativo",
+				"Nulo",
+				"Variável"
 			],
 			"correct": 1
 		},
 		{
-			"q": "Ao misturar água quente e fria num sistema isolado, a temperatura final é:",
+			"q": "A variação de entalpia de uma reação é representada pelo símbolo:",
 			"options": [
-				"Maior que a da água quente",
-				"Menor que a da água fria",
-				"Intermediária entre as duas",
-				"Sempre igual a 0°C"
+				"ΔP",
+				"ΔV",
+				"ΔT",
+				"ΔH"
 			],
-			"correct": 2
-		},
-		{
-			"q": "Num calorímetro, o corpo quente ____ calor e o corpo frio ____ calor:",
-			"options": [
-				"recebe / cede",
-				"cede / recebe",
-				"cede / cede",
-				"recebe / recebe"
-			],
-			"correct": 1
-		},
-		{
-			"q": "Quanto calor 1 kg de água (c = 4186) libera ao esfriar 10°C?",
-			"options": [
-				"≈ 4,19 kJ",
-				"≈ 41,9 kJ",
-				"≈ 419 kJ",
-				"≈ 4186 kJ"
-			],
-			"correct": 1
-		},
-		{
-			"q": "Por que um metal esquenta mais rápido que a água sob o mesmo calor?",
-			"options": [
-				"Porque tem maior calor específico",
-				"Porque tem menor calor específico",
-				"Porque tem mais massa",
-				"Porque reflete o calor"
-			],
-			"correct": 1
-		},
-		{
-			"q": "No SI, a unidade de calor específico é:",
-			"options": [
-				"J/(kg·°C)",
-				"J/kg",
-				"W/m²",
-				"°C/kg"
-			],
-			"correct": 0
+			"correct": 3
 		}
 	]
 }

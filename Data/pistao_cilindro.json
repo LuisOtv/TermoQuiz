@@ -2,104 +2,54 @@
 	"name": "Pistão / Cilindro",
 	"questions": [
 		{
-			"q": "A 1ª Lei da Termodinâmica pode ser expressa como:",
+			"q": "Como se chama a substância que acelera uma reação sem ser consumida?",
 			"options": [
-				"ΔU = Q + W",
-				"ΔU = W − Q",
-				"ΔU = Q × W",
-				"ΔU = Q − W"
+				"Solvente",
+				"Reagente",
+				"Indicador",
+				"Catalisador"
 			],
 			"correct": 3
 		},
 		{
-			"q": "Em um processo ADIABÁTICO:",
+			"q": "A energia de ativação é 100 kJ e um catalisador a reduz para 60 kJ. Qual foi a redução?",
 			"options": [
-				"Q = 0  (sem troca de calor)",
-				"ΔT = 0  (temperatura constante)",
-				"ΔP = 0  (pressão constante)",
-				"ΔV = 0  (volume constante)"
+				"20 kJ",
+				"30 kJ",
+				"40 kJ",
+				"50 kJ"
+			],
+			"correct": 2
+		},
+		{
+			"q": "Os catalisadores aceleram as reações porque:",
+			"options": [
+				"Aumentam a massa",
+				"Diminuem a energia de ativação",
+				"Criam novos reagentes",
+				"Aumentam a pressão"
+			],
+			"correct": 1
+		},
+		{
+			"q": "A maior velocidade de reação tende a ocorrer com:",
+			"options": [
+				"Energia de ativação alta e temperatura baixa",
+				"Energia de ativação baixa e temperatura alta",
+				"Energia de ativação alta e baixa concentração",
+				"Energia de ativação alta e alta concentração"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Por que a indústria utiliza catalisadores nas suas reações?",
+			"options": [
+				"Para obter maior eficiência (reações mais rápidas)",
+				"Para consumir mais reagentes",
+				"Para reduzir a produção",
+				"Para impedir a reação"
 			],
 			"correct": 0
-		},
-		{
-			"q": "O trabalho em um processo ISOBÁRICO (pressão constante) é:",
-			"options": [
-				"W = Q·ΔT",
-				"W = m·c·ΔT",
-				"W = P·ΔV",
-				"W = F / A"
-			],
-			"correct": 2
-		},
-		{
-			"q": "Em um processo ISOTÉRMICO ocorre:",
-			"options": [
-				"Q = 0  (sem troca de calor)",
-				"ΔT = 0  (temperatura constante)",
-				"ΔV = 0  (volume constante)",
-				"ΔP = 0  (pressão constante)"
-			],
-			"correct": 1
-		},
-		{
-			"q": "Em um processo ISOVOLUMÉTRICO (ΔV = 0), o trabalho realizado é:",
-			"options": [
-				"Máximo",
-				"Igual a P·V",
-				"Nulo (zero)",
-				"Sempre negativo"
-			],
-			"correct": 2
-		},
-		{
-			"q": "Quando o gás se EXPANDE e empurra o pistão, o trabalho realizado PELO gás é:",
-			"options": [
-				"Negativo",
-				"Nulo",
-				"Positivo",
-				"Indefinido"
-			],
-			"correct": 2
-		},
-		{
-			"q": "Na COMPRESSÃO adiabática de um gás, a temperatura:",
-			"options": [
-				"Aumenta",
-				"Diminui",
-				"Permanece constante",
-				"Vai a zero"
-			],
-			"correct": 0
-		},
-		{
-			"q": "Em uma EXPANSÃO adiabática (Q = 0), a temperatura do gás:",
-			"options": [
-				"Aumenta",
-				"Diminui",
-				"Não muda",
-				"Dobra"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A energia interna de um gás ideal depende essencialmente:",
-			"options": [
-				"Só da pressão",
-				"Só do volume",
-				"Da temperatura",
-				"Da cor do gás"
-			],
-			"correct": 2
-		},
-		{
-			"q": "Um gás recebe 100 J de calor e realiza 40 J de trabalho. Qual é o ΔU?",
-			"options": [
-				"140 J",
-				"60 J",
-				"−60 J",
-				"40 J"
-			],
-			"correct": 1
 		}
 	]
 }

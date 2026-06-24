@@ -2,102 +2,52 @@
 	"name": "Manômetro",
 	"questions": [
 		{
-			"q": "A fórmula correta da pressão é:",
+			"q": "Ao abrir uma garrafa de refrigerante, a saída do gás é favorecida pela:",
 			"options": [
-				"P = m / V",
-				"P = F / A",
-				"P = Q / T",
-				"P = W / t"
+				"Aumento da pressão",
+				"Diminuição da pressão",
+				"Aumento da massa",
+				"Ação de um catalisador"
 			],
 			"correct": 1
 		},
 		{
-			"q": "A Lei de Boyle (temperatura constante) afirma que:",
+			"q": "Aumentar a pressão de um sistema gasoso provoca:",
 			"options": [
-				"P + V = constante",
-				"P − V = constante",
-				"P / V = constante",
-				"P · V = constante"
-			],
-			"correct": 3
-		},
-		{
-			"q": "1 atm equivale a:",
-			"options": [
-				"1.000 Pa",
-				"9.800 Pa",
-				"760 Pa",
-				"101.325 Pa"
-			],
-			"correct": 3
-		},
-		{
-			"q": "Qual é a unidade de pressão no Sistema Internacional?",
-			"options": [
-				"Newton (N)",
-				"Pascal (Pa)",
-				"Joule (J)",
-				"Atmosfera (atm)"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A Lei de Gay-Lussac (volume constante) relaciona:",
-			"options": [
-				"P · T = constante",
-				"P / T = constante",
-				"P + T = constante",
-				"P − T = constante"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A Lei de Charles (pressão constante) afirma que:",
-			"options": [
-				"V · T = constante",
-				"V / T = constante",
-				"V − T = constante",
-				"V + P = constante"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A equação dos gases ideais é:",
-			"options": [
-				"P · V = n · R · T",
-				"P / V = R · T",
-				"P · V · T = n · R",
-				"P + V = n · R · T"
-			],
-			"correct": 0
-		},
-		{
-			"q": "Comprimindo um gás à temperatura constante até metade do volume, a pressão:",
-			"options": [
-				"Cai pela metade",
-				"Dobra",
-				"Permanece igual",
-				"Fica nula"
-			],
-			"correct": 1
-		},
-		{
-			"q": "O manômetro é o instrumento que mede:",
-			"options": [
-				"A temperatura",
-				"O volume",
-				"A pressão de um fluido ou gás",
-				"A massa"
+				"Menos colisões",
+				"Nenhum efeito",
+				"Mais colisões entre as moléculas",
+				"Menos energia"
 			],
 			"correct": 2
 		},
 		{
-			"q": "A pressão atmosférica diminui com a altitude porque:",
+			"q": "Qual fator é especialmente importante para a velocidade de reações entre gases?",
 			"options": [
-				"A gravidade desaparece",
-				"Há menos ar (coluna menor) acima",
-				"A temperatura é sempre 0°C",
-				"O ar fica mais pesado"
+				"Cor",
+				"Pressão",
+				"Massa molar",
+				"Forma do recipiente"
+			],
+			"correct": 1
+		},
+		{
+			"q": "Para que uma reação química ocorra, é necessário haver:",
+			"options": [
+				"Colisões frequentes e eficazes entre as moléculas",
+				"Apenas contato entre os reagentes",
+				"Alta temperatura obrigatória",
+				"Um catalisador obrigatório"
+			],
+			"correct": 0
+		},
+		{
+			"q": "Reações rápidas geralmente apresentam:",
+			"options": [
+				"Ausência de colisões",
+				"Muitas colisões eficazes",
+				"Energia de ativação nula",
+				"Temperatura nula"
 			],
 			"correct": 1
 		}

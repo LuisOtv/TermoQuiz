@@ -1,12 +1,16 @@
 extends Node
 
 ## Porcentagem mínima de acertos para "passar" em um objeto (0.0 a 1.0).
-## Com 3 perguntas por objeto: 0.6 aprova com 2/3; 0.7 exige 3/3 (pois 2/3 = 0,667).
+## Com 5 perguntas por objeto: 0.6 aprova a partir de 3/5 acertos.
 const PASS_PERCENT: float = 0.6
 
 # id (objectName) -> { "correct": int, "total": int, "passed": bool }
 var results: Dictionary = {}
 var registered: Array = []
+
+# Estatísticas da última tentativa de cada estação, usadas na avaliação final.
+# id (objectName) -> { "time_ms": int, "wrong": int, "total": int }
+var session_stats: Dictionary = {}
 
 signal updated
 signal completed
@@ -36,6 +40,26 @@ func set_result(id: String, correct: int, total: int) -> void:
 		completed.emit()
 
 
+## Registra o tempo gasto e os erros da última tentativa em uma estação
+## (sobrescreve a tentativa anterior). Alimenta o resumo da tela de vitória.
+func record_stats(id: String, time_ms: int, wrong: int, total: int) -> void:
+	session_stats[id] = {"time_ms": time_ms, "wrong": wrong, "total": total}
+
+
+func total_time_ms() -> int:
+	var t: int = 0
+	for id in session_stats:
+		t += int(session_stats[id].get("time_ms", 0))
+	return t
+
+
+func total_wrong() -> int:
+	var w: int = 0
+	for id in session_stats:
+		w += int(session_stats[id].get("wrong", 0))
+	return w
+
+
 func is_passed(id: String) -> bool:
 	return results.get(id, {}).get("passed", false)
 
@@ -58,4 +82,5 @@ func all_passed() -> bool:
 
 func reset() -> void:
 	results.clear()
+	session_stats.clear()
 	updated.emit()

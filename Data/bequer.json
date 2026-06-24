@@ -2,104 +2,54 @@
 	"name": "Béquer",
 	"questions": [
 		{
-			"q": "A que temperatura a água ferve ao nível do mar (1 atm)?",
+			"q": "Por que um comprimido efervescente triturado reage mais rápido do que inteiro?",
 			"options": [
-				"0°C  (273 K)",
-				"37°C  (310 K)",
-				"100°C  (373 K)",
-				"212°C  (485 K)"
+				"Maior pressão",
+				"Maior massa",
+				"Maior superfície de contato",
+				"Maior temperatura"
 			],
 			"correct": 2
 		},
 		{
-			"q": "Na fórmula Q = m·c·ΔT, o símbolo 'c' representa:",
+			"q": "Qual destas situações favorece uma reação mais rápida?",
 			"options": [
-				"Calor total absorvido",
-				"Calor específico da substância",
-				"Capacidade do recipiente",
-				"Velocidade da reação"
-			],
-			"correct": 1
-		},
-		{
-			"q": "O calor específico da água vale aproximadamente:",
-			"options": [
-				"100 J/(kg·°C)",
-				"418 J/(kg·°C)",
-				"1000 J/(kg·°C)",
-				"4186 J/(kg·°C)"
-			],
-			"correct": 3
-		},
-		{
-			"q": "Quanto calor é preciso para aquecer 2 kg de água em 10°C? (c = 4186)",
-			"options": [
-				"≈ 8,4 kJ",
-				"≈ 41,9 kJ",
-				"≈ 83,7 kJ",
-				"≈ 837 kJ"
+				"Carvão em bloco",
+				"Barra de ferro maciça",
+				"Pó de magnésio",
+				"Cubo de gelo"
 			],
 			"correct": 2
 		},
 		{
-			"q": "O alto calor específico da água significa que ela:",
+			"q": "Ao dobrar a concentração dos reagentes, a velocidade da reação tende a:",
 			"options": [
-				"Esquenta e esfria muito rápido",
-				"Precisa de muita energia para variar sua temperatura",
-				"Não pode ser aquecida",
-				"Armazena pouco calor"
+				"Aumentar",
+				"Diminuir",
+				"Não mudar",
+				"Parar"
 			],
-			"correct": 1
+			"correct": 0
 		},
 		{
-			"q": "Dobrando a massa de água (mesmo ΔT), o calor necessário:",
+			"q": "A velocidade de uma reação química é medida pela:",
 			"options": [
-				"Cai pela metade",
-				"Permanece o mesmo",
-				"Dobra",
-				"Fica quatro vezes maior"
+				"Variação da concentração ao longo do tempo",
+				"Cor da solução",
+				"Massa do recipiente",
+				"Temperatura ambiente"
 			],
-			"correct": 2
+			"correct": 0
 		},
 		{
-			"q": "Qual é a principal função do béquer no laboratório?",
+			"q": "A concentração de um reagente cai de 0,80 mol/L para 0,20 mol/L em 30 s. Qual a velocidade média?",
 			"options": [
-				"Medir volumes com alta precisão",
-				"Conter, misturar e aquecer líquidos",
-				"Medir a temperatura",
-				"Produzir vácuo"
+				"0,02 mol/(L·s)",
+				"0,01 mol/(L·s)",
+				"0,03 mol/(L·s)",
+				"0,04 mol/(L·s)"
 			],
-			"correct": 1
-		},
-		{
-			"q": "Qual é a unidade de energia (calor) no Sistema Internacional?",
-			"options": [
-				"Caloria",
-				"Watt",
-				"Joule",
-				"Kelvin"
-			],
-			"correct": 2
-		},
-		{
-			"q": "1 caloria equivale a aproximadamente:",
-			"options": [
-				"1 J",
-				"4,186 J",
-				"100 J",
-				"1000 J"
-			],
-			"correct": 1
-		},
-		{
-			"q": "Usar uma tela/tripé sob o béquer ao aquecer serve para:",
-			"options": [
-				"Aumentar a pressão interna",
-				"Distribuir o calor e evitar o choque térmico",
-				"Acelerar uma reação química",
-				"Medir a massa do líquido"
-			],
-			"correct": 1
+			"correct": 0
 		}
 	]
 }

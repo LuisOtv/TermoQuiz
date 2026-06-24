@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dtuav5mn106bb"]
+
+[sub_resource type="StandardMaterial3D" id="M_Wood"]
+albedo_color = Color(0.62, 0.43, 0.26, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="Box_Base"]
+material = SubResource("M_Wood")
+size = Vector3(0.26, 0.02, 0.07)
+
+[sub_resource type="BoxMesh" id="Box_Upright"]
+material = SubResource("M_Wood")
+size = Vector3(0.02, 0.12, 0.07)
+
+[sub_resource type="BoxMesh" id="Box_Rail"]
+material = SubResource("M_Wood")
+size = Vector3(0.26, 0.02, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="M_Glass"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.8, 0.88, 0.93, 0.2)
+roughness = 0.05
+
+[sub_resource type="CapsuleMesh" id="Cap_Tube"]
+material = SubResource("M_Glass")
+radius = 0.012
+height = 0.14
+
+[sub_resource type="StandardMaterial3D" id="M_Liq_R"]
+transparency = 1
+albedo_color = Color(0.85, 0.25, 0.28, 0.85)
+roughness = 0.2
+
+[sub_resource type="CylinderMesh" id="Cyl_Liq"]
+top_radius = 0.0102
+bottom_radius = 0.0102
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="M_Liq_B"]
+transparency = 1
+albedo_color = Color(0.2, 0.45, 0.85, 0.85)
+roughness = 0.2
+
+[sub_resource type="StandardMaterial3D" id="M_Liq_G"]
+transparency = 1
+albedo_color = Color(0.3, 0.7, 0.35, 0.85)
+roughness = 0.2
+
+[sub_resource type="StandardMaterial3D" id="M_Liq_A"]
+transparency = 1
+albedo_color = Color(0.9, 0.7, 0.25, 0.85)
+roughness = 0.2
+
+[node name="TestTubes" type="Node3D" unique_id=1749106218]
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1958604122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("Box_Base")
+
+[node name="UprightL" type="MeshInstance3D" parent="." unique_id=1790278131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.06, 0)
+mesh = SubResource("Box_Upright")
+
+[node name="UprightR" type="MeshInstance3D" parent="." unique_id=285552487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.06, 0)
+mesh = SubResource("Box_Upright")
+
+[node name="Rail" type="MeshInstance3D" parent="." unique_id=1295776222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115, 0)
+mesh = SubResource("Box_Rail")
+
+[node name="Tube0" type="MeshInstance3D" parent="." unique_id=1936868954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, 0.085, 0)
+mesh = SubResource("Cap_Tube")
+
+[node name="Tube1" type="MeshInstance3D" parent="." unique_id=1459168460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.085, 0)
+mesh = SubResource("Cap_Tube")
+
+[node name="Tube2" type="MeshInstance3D" parent="." unique_id=1144761748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.085, 0)
+mesh = SubResource("Cap_Tube")
+
+[node name="Tube3" type="MeshInstance3D" parent="." unique_id=1316134014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.085, 0)
+mesh = SubResource("Cap_Tube")
+
+[node name="Liq0" type="MeshInstance3D" parent="." unique_id=249258580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, 0.05, 0)
+material_override = SubResource("M_Liq_R")
+mesh = SubResource("Cyl_Liq")
+
+[node name="Liq1" type="MeshInstance3D" parent="." unique_id=2040744354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.05, 0)
+material_override = SubResource("M_Liq_B")
+mesh = SubResource("Cyl_Liq")
+
+[node name="Liq2" type="MeshInstance3D" parent="." unique_id=718269837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.05, 0)
+material_override = SubResource("M_Liq_G")
+mesh = SubResource("Cyl_Liq")
+
+[node name="Liq3" type="MeshInstance3D" parent="." unique_id=707152376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.05, 0)
+material_override = SubResource("M_Liq_A")
+mesh = SubResource("Cyl_Liq")

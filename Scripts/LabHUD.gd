@@ -43,6 +43,7 @@ var opts_container: VBoxContainer
 var option_buttons: Array = []
 var feedback_label: Label
 var results_label: Label
+var review_label: RichTextLabel
 var next_btn: Button
 var refazer_btn: Button
 var back_btn: Button
@@ -66,6 +67,12 @@ var answered: bool = false
 var session_correct: int = 0
 var quiz_open: bool = false
 var showing_results: bool = false
+
+# Avaliação: tempo e respostas marcadas em cada questão da sessão atual.
+var session_start_ms: int = 0
+var question_start_ms: int = 0
+# Cada item: { "q", "options", "correct", "chosen", "time_ms", "right" }
+var session_review: Array = []
 
 
 func _ready() -> void:
@@ -297,11 +304,28 @@ func _build_quiz_panel() -> void:
 	results_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var rs := LabelSettings.new()
 	rs.font = mono_font
-	rs.font_size = 27
+	rs.font_size = 22
 	rs.font_color = COL_TEXT
 	results_label.label_settings = rs
 	results_label.visible = false
 	vbox.add_child(results_label)
+
+	# Tabela de avaliação: revisão de cada questão (sua resposta x gabarito + tempo).
+	# Rola internamente com a roda do mouse quando o conteúdo é maior que a área.
+	review_label = RichTextLabel.new()
+	review_label.bbcode_enabled = true
+	review_label.scroll_active = true
+	review_label.fit_content = false
+	review_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	review_label.custom_minimum_size = Vector2(0.0, 250.0)
+	review_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	# Fonte padrão (não mono) para cobrir todos os glifos dos enunciados (ΔH, →, ✓, ✗).
+	review_label.add_theme_font_size_override("normal_font_size", 16)
+	review_label.add_theme_font_size_override("bold_font_size", 16)
+	review_label.add_theme_color_override("default_color", COL_TEXT)
+	review_label.add_theme_constant_override("line_separation", 5)
+	review_label.visible = false
+	vbox.add_child(review_label)
 
 	var spacer := Control.new()
 	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -591,6 +615,8 @@ func open_quiz(data_file: String, id: String, accent: Color = COL_ACCENT) -> voi
 	answered = false
 	showing_results = false
 	quiz_open = true
+	session_review = []
+	session_start_ms = Time.get_ticks_msec()
 	_prepare_session()
 
 	_apply_accent(accent)
@@ -598,6 +624,7 @@ func open_quiz(data_file: String, id: String, accent: Color = COL_ACCENT) -> voi
 	question_label.visible = true
 	opts_container.visible = true
 	results_label.visible = false
+	review_label.visible = false
 	refazer_btn.visible = false
 	panel_title_label.text = str(data.get("name", id)).to_upper()
 
@@ -664,6 +691,7 @@ func _update_question_display() -> void:
 	feedback_label.visible = false
 	next_btn.visible = false
 	answered = false
+	question_start_ms = Time.get_ticks_msec()
 
 
 func _on_option_pressed(opt_idx: int) -> void:
@@ -675,6 +703,16 @@ func _on_option_pressed(opt_idx: int) -> void:
 	var opts: Array = q.get("options", [])
 	var correct: int = clampi(int(q.get("correct", 0)), 0, 3)
 	var is_right: bool = (opt_idx == correct)
+
+	# Registra a questão para a tabela de avaliação final (resposta x gabarito + tempo).
+	session_review.append({
+		"q": str(q.get("q", "")),
+		"options": opts.duplicate(),
+		"correct": correct,
+		"chosen": opt_idx,
+		"time_ms": Time.get_ticks_msec() - question_start_ms,
+		"right": is_right,
+	})
 
 	for i in 4:
 		var btn: Button = option_buttons[i]
@@ -741,33 +779,85 @@ func _show_results() -> void:
 	feedback_label.visible = false
 	next_btn.visible = false
 
+	var elapsed_ms: int = Time.get_ticks_msec() - session_start_ms
+	var wrong: int = total - session_correct
 	GameProgress.set_result(current_id, session_correct, total)
+	GameProgress.record_stats(current_id, elapsed_ms, wrong, total)
 
 	var pct: int = int(round(100.0 * session_correct / float(total)))
 	var min_pct: int = int(round(100.0 * GameProgress.PASS_PERCENT))
 	var passed: bool = float(session_correct) / float(total) >= GameProgress.PASS_PERCENT
 	if passed:
-		results_label.text = "APROVADO\n\n%d / %d acertos  ·  %d%%" % [session_correct, total, pct]
+		results_label.text = "APROVADO   ·   %d/%d acertos (%d%%)\nTempo: %s   ·   Erros: %d" % \
+			[session_correct, total, pct, _fmt_duration(elapsed_ms), wrong]
 		results_label.label_settings.font_color = COL_CORRECT
 	else:
-		results_label.text = "QUASE LÁ\n\n%d / %d acertos  ·  %d%%\nmínimo p/ aprovar: %d%%" % [session_correct, total, pct, min_pct]
+		results_label.text = "QUASE LÁ   ·   %d/%d acertos (%d%%, mín. %d%%)\nTempo: %s   ·   Erros: %d" % \
+			[session_correct, total, pct, min_pct, _fmt_duration(elapsed_ms), wrong]
 		results_label.label_settings.font_color = COL_WRONG
 	results_label.visible = true
+
+	review_label.text = _build_review_bbcode()
+	review_label.visible = true
+
 	refazer_btn.visible = true
 	_pop_scale(results_label, 1.12)
 	if passed:
 		_spawn_confetti(40)
 
 
+## Monta a tabela de revisão: para cada questão, mostra sua resposta x o gabarito
+## e o tempo gasto, destacando os acertos (verde) e erros (vermelho).
+func _build_review_bbcode() -> String:
+	var green: String = COL_CORRECT.to_html(false)
+	var red: String = COL_WRONG.to_html(false)
+	var muted: String = COL_MUTED.to_html(false)
+	var lines: PackedStringArray = []
+	for i in session_review.size():
+		var e: Dictionary = session_review[i]
+		var opts: Array = e.get("options", [])
+		var correct: int = int(e.get("correct", 0))
+		var chosen: int = int(e.get("chosen", 0))
+		var right: bool = bool(e.get("right", false))
+		var time_s: String = _fmt_duration(int(e.get("time_ms", 0)))
+		var mark_col: String = green if right else red
+		var mark: String = "✓" if right else "✗"
+
+		lines.append("[color=#%s][b]%s  Q%d[/b][/color]   [color=#%s]%s[/color]" \
+			% [mark_col, mark, i + 1, muted, time_s])
+		lines.append("[color=#%s]%s[/color]" % [COL_TEXT.to_html(false), str(e.get("q", ""))])
+		var correct_txt: String = "%s) %s" % [LETTERS[correct], str(opts[correct]) if correct < opts.size() else "?"]
+		if right:
+			lines.append("[color=#%s]Você acertou: %s[/color]" % [green, correct_txt])
+		else:
+			var chosen_txt: String = "%s) %s" % [LETTERS[chosen], str(opts[chosen]) if chosen < opts.size() else "?"]
+			lines.append("[color=#%s]Você marcou: %s[/color]" % [red, chosen_txt])
+			lines.append("[color=#%s]Gabarito: %s[/color]" % [green, correct_txt])
+		lines.append("")
+	return "\n".join(lines)
+
+
+## Formata uma duração em ms como "12,3 s" ou "1 min 05 s".
+func _fmt_duration(ms: int) -> String:
+	var s: float = ms / 1000.0
+	if s < 60.0:
+		return ("%.1f s" % s).replace(".", ",")
+	var total_s: int = int(round(s))
+	return "%d min %02d s" % [total_s / 60, total_s % 60]
+
+
 func _restart_quiz() -> void:
 	showing_results = false
 	results_label.visible = false
+	review_label.visible = false
 	refazer_btn.visible = false
 	q_counter_label.visible = true
 	question_label.visible = true
 	opts_container.visible = true
 	current_question_index = 0
 	session_correct = 0
+	session_review = []
+	session_start_ms = Time.get_ticks_msec()
 	_prepare_session()
 	_update_question_display()
 
@@ -779,7 +869,8 @@ func _on_completed() -> void:
 	quiz_root.visible = false
 	crosshair.visible = false
 	set_prompt("")
-	victory_label.text = "Você dominou todos os\n%d objetos do laboratório" % GameProgress.total_count()
+	victory_label.text = "Você dominou todos os %d objetos do laboratório\n\nTempo total: %s   ·   Erros: %d" % \
+		[GameProgress.total_count(), _fmt_duration(GameProgress.total_time_ms()), GameProgress.total_wrong()]
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	victory_root.visible = true
 	_pop_in(victory_panel)

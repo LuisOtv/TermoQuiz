@@ -2,104 +2,54 @@
 	"name": "Termômetro",
 	"questions": [
 		{
-			"q": "Como converter 27°C para a escala Kelvin?",
+			"q": "A queima da madeira é uma reação:",
 			"options": [
-				"246 K",
-				"327 K",
-				"300 K",
-				"27 K"
-			],
-			"correct": 2
-		},
-		{
-			"q": "O zero absoluto equivale a:",
-			"options": [
-				"0°C",
-				"−100°C",
-				"−200°C",
-				"−273,15°C"
-			],
-			"correct": 3
-		},
-		{
-			"q": "A Lei Zero da Termodinâmica define:",
-			"options": [
-				"A impossibilidade de 100% de eficiência",
-				"O equilíbrio térmico entre sistemas",
-				"A conservação total de energia",
-				"A expansão de gases ideais"
+				"Endotérmica",
+				"Exotérmica",
+				"Isotérmica",
+				"Adiabática"
 			],
 			"correct": 1
 		},
 		{
-			"q": "Quanto é 100°C na escala Kelvin?",
+			"q": "Em um diagrama de energia, os produtos acima dos reagentes indicam uma reação:",
 			"options": [
-				"173 K",
-				"273 K",
-				"373 K",
-				"473 K"
-			],
-			"correct": 2
-		},
-		{
-			"q": "O termômetro de líquido mede temperatura com base:",
-			"options": [
-				"Na massa do líquido interno",
-				"Na dilatação térmica do líquido com a temperatura",
-				"Na pressão atmosférica local",
-				"Na cor do líquido"
+				"Exotérmica",
+				"Endotérmica",
+				"Catalítica",
+				"Espontânea"
 			],
 			"correct": 1
 		},
 		{
-			"q": "Temperatura é uma medida de:",
+			"q": "A chama de uma vela acesa é um exemplo de processo:",
 			"options": [
-				"Quantidade de calor armazenada",
-				"Energia cinética média das partículas",
-				"Massa total do corpo",
-				"Pressão do gás"
+				"Endotérmico",
+				"Exotérmico",
+				"De fusão",
+				"De sublimação"
 			],
 			"correct": 1
 		},
 		{
-			"q": "Qual é a diferença entre calor e temperatura?",
+			"q": "Produtos com energia menor que a dos reagentes indicam uma reação:",
 			"options": [
-				"São exatamente a mesma coisa",
-				"Calor é energia em trânsito; temperatura é o grau de agitação das partículas",
-				"Temperatura é energia; calor é massa",
-				"Calor só existe em sólidos"
+				"Endotérmica",
+				"Exotérmica",
+				"Sem reação",
+				"Em equilíbrio"
 			],
 			"correct": 1
 		},
 		{
-			"q": "Uma variação de 1 K corresponde a uma variação de quantos °C?",
+			"q": "A combustão libera energia principalmente na forma de:",
 			"options": [
-				"1 °C",
-				"273 °C",
-				"1,8 °C",
-				"100 °C"
+				"Calor",
+				"Massa",
+				"Pressão",
+				"Volume"
 			],
 			"correct": 0
-		},
-		{
-			"q": "Quanto é 50°C em Fahrenheit?  (°F = 9/5·°C + 32)",
-			"options": [
-				"82 °F",
-				"90 °F",
-				"122 °F",
-				"150 °F"
-			],
-			"correct": 2
-		},
-		{
-			"q": "Dois corpos em equilíbrio térmico necessariamente têm:",
-			"options": [
-				"A mesma massa",
-				"A mesma temperatura",
-				"Troca contínua de calor entre si",
-				"Pressões iguais"
-			],
-			"correct": 1
 		}
 	]
 }

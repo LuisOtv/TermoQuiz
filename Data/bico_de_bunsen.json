@@ -2,104 +2,54 @@
 	"name": "Bico de Bunsen",
 	"questions": [
 		{
-			"q": "O que é combustão?",
+			"q": "Qual fator da cinética é diretamente alterado ao aquecer o ambiente de uma reação?",
 			"options": [
-				"Absorção de calor por convecção",
-				"Reação exotérmica entre combustível e O₂",
-				"Mudança do estado sólido para líquido",
-				"Processo de resfriamento adiabático"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A chama AZUL do Bico de Bunsen indica:",
-			"options": [
-				"Combustão incompleta, mais fria (~400°C)",
-				"Ausência de oxigênio na mistura",
-				"Combustão completa, mais quente (~1500°C)",
-				"Temperatura abaixo de 300°C"
+				"Concentração",
+				"Superfície de contato",
+				"Temperatura",
+				"Catalisador"
 			],
 			"correct": 2
 		},
 		{
-			"q": "Por que aquecemos recipientes de baixo para cima no laboratório?",
+			"q": "Por que uma reação ocorre mais rapidamente em ambiente quente?",
 			"options": [
-				"Porque o fogo desce por gravidade",
-				"Para evitar quebra do recipiente",
-				"Para criar correntes de convecção que distribuem o calor",
-				"Para aumentar a pressão interna"
-			],
-			"correct": 2
-		},
-		{
-			"q": "Uma chama AMARELA no Bico de Bunsen indica:",
-			"options": [
-				"Combustão completa e muito quente",
-				"Combustão incompleta, com pouco ar e fuligem",
-				"Ausência total de combustível",
-				"Temperatura próxima do zero absoluto"
+				"As moléculas ficam maiores",
+				"Há mais colisões eficazes entre as moléculas",
+				"A massa dos reagentes aumenta",
+				"A concentração diminui"
 			],
 			"correct": 1
 		},
 		{
-			"q": "Que tipo de gás normalmente alimenta o Bico de Bunsen?",
+			"q": "Por que gravetos finos queimam mais rápido que uma tora grossa?",
 			"options": [
-				"Oxigênio (O₂)",
-				"Gás carbônico (CO₂)",
-				"Um gás combustível (GLP ou gás natural)",
-				"Nitrogênio (N₂)"
+				"Maior densidade",
+				"Maior massa molar",
+				"Maior superfície de contato",
+				"Maior temperatura"
 			],
 			"correct": 2
 		},
 		{
-			"q": "Onde fica a região mais quente da chama azul?",
+			"q": "Por que os alimentos se conservam por mais tempo na geladeira?",
 			"options": [
-				"Na base, junto ao tubo",
-				"No interior do cone azul (zona redutora)",
-				"Logo acima da ponta do cone interno (zona oxidante)",
-				"A temperatura é igual em toda a chama"
-			],
-			"correct": 2
-		},
-		{
-			"q": "Abrir a entrada de ar (anel) na base do bico deixa a chama:",
-			"options": [
-				"Amarela e mais fria",
-				"Azul e mais quente",
-				"Apagada imediatamente",
-				"Sem qualquer alteração"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A combustão COMPLETA do metano (CH₄) produz principalmente:",
-			"options": [
-				"Monóxido de carbono e fuligem",
-				"Gás carbônico (CO₂) e água (H₂O)",
-				"Hidrogênio e oxigênio",
-				"Apenas vapor de água"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A combustão INCOMPLETA é perigosa porque libera:",
-			"options": [
-				"Monóxido de carbono (CO), gás tóxico",
-				"Oxigênio em excesso",
-				"Apenas vapor de água",
-				"Um gás nobre inerte"
+				"Menor movimentação (agitação) das moléculas",
+				"Maior massa dos alimentos",
+				"Menor pressão interna",
+				"Maior número de colisões"
 			],
 			"correct": 0
 		},
 		{
-			"q": "O calor que sentimos perto da chama, sem encostar nela, chega por:",
+			"q": "Qual combinação produz a reação mais rápida?",
 			"options": [
-				"Condução",
-				"Convecção",
-				"Radiação",
-				"Evaporação"
+				"Baixa temperatura e sólido compacto",
+				"Alta temperatura e reagente pulverizado",
+				"Reagentes resfriados a 0 °C",
+				"Baixa concentração dos reagentes"
 			],
-			"correct": 2
+			"correct": 1
 		}
 	]
 }

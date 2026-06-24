@@ -2,104 +2,54 @@
 	"name": "Condensador",
 	"questions": [
 		{
-			"q": "Calor latente é a energia trocada:",
+			"q": "Quando a água congela, ela:",
 			"options": [
-				"Ao aumentar a temperatura de um sólido",
-				"Durante a mudança de estado, sem variar temperatura",
-				"Apenas em processos adiabáticos",
-				"Ao misturar dois líquidos de temperaturas distintas"
+				"Absorve calor",
+				"Libera calor",
+				"Não troca calor",
+				"Perde massa"
 			],
 			"correct": 1
 		},
 		{
-			"q": "A condensação é um processo:",
+			"q": "Qual mudança de estado absorve calor?",
 			"options": [
-				"Endotérmico — absorve calor do ambiente",
-				"Sem troca de calor (adiabático)",
-				"Exotérmico — libera calor para o ambiente",
-				"Que aumenta o volume do sistema"
+				"Solidificação",
+				"Condensação",
+				"Fusão",
+				"Congelamento"
 			],
 			"correct": 2
 		},
 		{
-			"q": "A diferença entre evaporação e ebulição é:",
+			"q": "A evaporação do suor sobre a pele:",
 			"options": [
-				"Ebulição ocorre na superfície; evaporação no interior",
-				"São processos fisicamente idênticos",
-				"Evaporação só ocorre a 100°C",
-				"Evaporação ocorre na superfície a qualquer temperatura"
+				"Libera calor",
+				"Absorve calor",
+				"Produz fogo",
+				"Aumenta a massa"
 			],
-			"correct": 3
+			"correct": 1
 		},
 		{
-			"q": "Qual é a principal função de um condensador?",
+			"q": "Por que o álcool causa sensação de frio ao evaporar na pele?",
 			"options": [
-				"Transformar vapor em líquido (condensar)",
-				"Transformar líquido em vapor",
-				"Aumentar a pressão do gás",
-				"Medir a temperatura do vapor"
+				"Porque a evaporação absorve calor",
+				"Porque libera calor",
+				"Porque congela a pele",
+				"Por causa do aumento de massa"
 			],
 			"correct": 0
 		},
 		{
-			"q": "Durante a condensação, a temperatura da substância:",
+			"q": "Qual das situações abaixo absorve calor?",
 			"options": [
-				"Aumenta continuamente",
-				"Permanece constante",
-				"Cai a zero",
-				"Dobra"
+				"Queima de carvão",
+				"Congelamento da água",
+				"Fusão do gelo",
+				"Combustão do gás"
 			],
-			"correct": 1
-		},
-		{
-			"q": "O calor latente de vaporização da água (~2260 kJ/kg) é a energia para:",
-			"options": [
-				"Aquecer 1 kg de água em 1°C",
-				"Vaporizar 1 kg de água a 100°C",
-				"Congelar 1 kg de água",
-				"Levar a água ao zero absoluto"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A passagem do estado gasoso para o líquido chama-se:",
-			"options": [
-				"Vaporização",
-				"Condensação (liquefação)",
-				"Sublimação",
-				"Fusão"
-			],
-			"correct": 1
-		},
-		{
-			"q": "Para condensar o vapor, o condensador precisa:",
-			"options": [
-				"Fornecer calor ao vapor",
-				"Retirar calor do vapor",
-				"Comprimir o vapor",
-				"Aquecer o vapor"
-			],
-			"correct": 1
-		},
-		{
-			"q": "A solidificação e a condensação são processos:",
-			"options": [
-				"Endotérmicos (absorvem calor)",
-				"Exotérmicos (liberam calor)",
-				"Adiabáticos",
-				"Isotérmicos sem troca de energia"
-			],
-			"correct": 1
-		},
-		{
-			"q": "Enquanto a água pura ferve a 1 atm, a sua temperatura:",
-			"options": [
-				"Sobe acima de 100°C",
-				"Permanece em 100°C",
-				"Cai para 0°C",
-				"Oscila aleatoriamente"
-			],
-			"correct": 1
+			"correct": 2
 		}
 	]
 }
