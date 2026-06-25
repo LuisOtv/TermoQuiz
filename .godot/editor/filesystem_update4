@@ -1,4 +1,1 @@
-res://Scenes/Lab.tscn
-res://Scenes/Props/TestTubes.tscn
-res://Scenes/Props/Chair.tscn
-res://Scenes/Props/Beaker.tscn
+res://Scripts/LabHUD.gd

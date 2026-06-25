@@ -27,6 +27,15 @@ var progress_label: Label
 var progress_bar: ProgressBar
 var _hover: bool = false
 
+# Menus
+var start_root: Control
+var start_panel: PanelContainer
+var pause_root: Control
+var pause_panel: PanelContainer
+var pause_progress_label: Label
+var game_started: bool = false
+var pause_open: bool = false
+
 # Painel de quiz
 var mono_font: Font
 var _accent: Color = COL_ACCENT
@@ -76,15 +85,19 @@ var session_review: Array = []
 
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	add_to_group("HUD")
 	mono_font = load("res://Fonts/IBMPlexMono-Medium.ttf")
 	_build_hud()
 	_build_quiz_panel()
 	_build_victory()
+	_build_start_screen()
+	_build_pause_menu()
 	_setup_audio()
 	GameProgress.updated.connect(_refresh_progress)
 	GameProgress.completed.connect(_on_completed)
 	_refresh_progress()
+	call_deferred("_show_start_screen")
 
 
 # ── Construção da UI ──────────────────────────────────────────────────────────
@@ -163,6 +176,242 @@ func _build_hud() -> void:
 	bar_fill.set_corner_radius_all(4)
 	progress_bar.add_theme_stylebox_override("fill", bar_fill)
 	add_child(progress_bar)
+
+
+func _build_start_screen() -> void:
+	start_root = Control.new()
+	start_root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	start_root.visible = false
+	start_root.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(start_root)
+
+	var dim := ColorRect.new()
+	dim.color = Color(0.02, 0.03, 0.05, 0.68)
+	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
+	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	start_root.add_child(dim)
+
+	var center := CenterContainer.new()
+	center.set_anchors_preset(Control.PRESET_FULL_RECT)
+	start_root.add_child(center)
+
+	start_panel = PanelContainer.new()
+	start_panel.custom_minimum_size = Vector2(720, 400)
+	start_panel.pivot_offset = Vector2(360, 200)
+	var ps := StyleBoxFlat.new()
+	ps.bg_color = COL_PANEL
+	ps.border_color = Color(COL_ACCENT.r, COL_ACCENT.g, COL_ACCENT.b, 0.75)
+	ps.set_border_width_all(1)
+	ps.set_corner_radius_all(5)
+	ps.shadow_color = Color(0, 0, 0, 0.55)
+	ps.shadow_size = 38
+	start_panel.add_theme_stylebox_override("panel", ps)
+	center.add_child(start_panel)
+
+	var outer := VBoxContainer.new()
+	outer.add_theme_constant_override("separation", 0)
+	start_panel.add_child(outer)
+
+	var bar := ColorRect.new()
+	bar.color = COL_ACCENT
+	bar.custom_minimum_size = Vector2(0, 4)
+	outer.add_child(bar)
+
+	var pad := MarginContainer.new()
+	pad.add_theme_constant_override("margin_left", 48)
+	pad.add_theme_constant_override("margin_right", 48)
+	pad.add_theme_constant_override("margin_top", 36)
+	pad.add_theme_constant_override("margin_bottom", 34)
+	pad.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	outer.add_child(pad)
+
+	var vbox := VBoxContainer.new()
+	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	vbox.add_theme_constant_override("separation", 15)
+	pad.add_child(vbox)
+
+	var tag := Label.new()
+	tag.text = "[ TERMOQUIZ ]"
+	tag.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var tag_s := LabelSettings.new()
+	tag_s.font = mono_font
+	tag_s.font_size = 15
+	tag_s.font_color = COL_ACCENT
+	tag.label_settings = tag_s
+	vbox.add_child(tag)
+
+	var title := Label.new()
+	title.text = "Laboratório de Termoquímica"
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	var title_s := LabelSettings.new()
+	title_s.font = mono_font
+	title_s.font_size = 32
+	title_s.font_color = COL_TEXT
+	title.label_settings = title_s
+	vbox.add_child(title)
+
+	var intro := Label.new()
+	intro.text = "Explore 8 estações do laboratório, responda aos quizzes e conclua tudo acertando pelo menos 60% em cada equipamento."
+	intro.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	var intro_s := LabelSettings.new()
+	intro_s.font_size = 21
+	intro_s.font_color = COL_TEXT
+	intro.label_settings = intro_s
+	vbox.add_child(intro)
+
+	var details := Label.new()
+	details.text = "8 estações  ·  40 perguntas  ·  aprovação com 3/5"
+	details.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var details_s := LabelSettings.new()
+	details_s.font = mono_font
+	details_s.font_size = 14
+	details_s.font_color = COL_MUTED
+	details.label_settings = details_s
+	vbox.add_child(details)
+
+	var controls := Label.new()
+	controls.text = "WASD / SETAS   ·   Mouse olha   ·   F interage   ·   Esc pausa"
+	controls.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var controls_s := LabelSettings.new()
+	controls_s.font = mono_font
+	controls_s.font_size = 14
+	controls_s.font_color = COL_MUTED
+	controls.label_settings = controls_s
+	vbox.add_child(controls)
+
+	var gap := Control.new()
+	gap.custom_minimum_size = Vector2(0, 4)
+	vbox.add_child(gap)
+
+	var row := HBoxContainer.new()
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	row.add_theme_constant_override("separation", 14)
+	vbox.add_child(row)
+
+	var start_btn := Button.new()
+	start_btn.text = "COMEÇAR"
+	start_btn.custom_minimum_size = Vector2(180, 46)
+	start_btn.pressed.connect(_start_game)
+	_style_nav_button(start_btn, true)
+	row.add_child(start_btn)
+
+	var quit_btn := Button.new()
+	quit_btn.text = "SAIR"
+	quit_btn.custom_minimum_size = Vector2(140, 46)
+	quit_btn.pressed.connect(_quit_game)
+	_style_nav_button(quit_btn, false)
+	row.add_child(quit_btn)
+
+
+func _build_pause_menu() -> void:
+	pause_root = Control.new()
+	pause_root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	pause_root.visible = false
+	pause_root.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(pause_root)
+
+	var dim := ColorRect.new()
+	dim.color = Color(0.02, 0.03, 0.05, 0.66)
+	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
+	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pause_root.add_child(dim)
+
+	var center := CenterContainer.new()
+	center.set_anchors_preset(Control.PRESET_FULL_RECT)
+	pause_root.add_child(center)
+
+	pause_panel = PanelContainer.new()
+	pause_panel.custom_minimum_size = Vector2(600, 330)
+	pause_panel.pivot_offset = Vector2(300, 165)
+	var ps := StyleBoxFlat.new()
+	ps.bg_color = COL_PANEL
+	ps.border_color = Color(COL_ACCENT.r, COL_ACCENT.g, COL_ACCENT.b, 0.75)
+	ps.set_border_width_all(1)
+	ps.set_corner_radius_all(5)
+	ps.shadow_color = Color(0, 0, 0, 0.55)
+	ps.shadow_size = 38
+	pause_panel.add_theme_stylebox_override("panel", ps)
+	center.add_child(pause_panel)
+
+	var outer := VBoxContainer.new()
+	outer.add_theme_constant_override("separation", 0)
+	pause_panel.add_child(outer)
+
+	var bar := ColorRect.new()
+	bar.color = COL_ACCENT
+	bar.custom_minimum_size = Vector2(0, 4)
+	outer.add_child(bar)
+
+	var pad := MarginContainer.new()
+	pad.add_theme_constant_override("margin_left", 44)
+	pad.add_theme_constant_override("margin_right", 44)
+	pad.add_theme_constant_override("margin_top", 34)
+	pad.add_theme_constant_override("margin_bottom", 32)
+	pad.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	outer.add_child(pad)
+
+	var vbox := VBoxContainer.new()
+	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	vbox.add_theme_constant_override("separation", 14)
+	pad.add_child(vbox)
+
+	var tag := Label.new()
+	tag.text = "[ PAUSA ]"
+	tag.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var tag_s := LabelSettings.new()
+	tag_s.font = mono_font
+	tag_s.font_size = 15
+	tag_s.font_color = COL_ACCENT
+	tag.label_settings = tag_s
+	vbox.add_child(tag)
+
+	var title := Label.new()
+	title.text = "Jogo pausado"
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	var title_s := LabelSettings.new()
+	title_s.font = mono_font
+	title_s.font_size = 31
+	title_s.font_color = COL_TEXT
+	title.label_settings = title_s
+	vbox.add_child(title)
+
+	pause_progress_label = Label.new()
+	pause_progress_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	pause_progress_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	var prog_s := LabelSettings.new()
+	prog_s.font = mono_font
+	prog_s.font_size = 16
+	prog_s.font_color = COL_MUTED
+	pause_progress_label.label_settings = prog_s
+	vbox.add_child(pause_progress_label)
+
+	var buttons := VBoxContainer.new()
+	buttons.alignment = BoxContainer.ALIGNMENT_CENTER
+	buttons.add_theme_constant_override("separation", 10)
+	vbox.add_child(buttons)
+
+	var continue_btn := Button.new()
+	continue_btn.text = "CONTINUAR"
+	continue_btn.custom_minimum_size = Vector2(270, 44)
+	continue_btn.pressed.connect(_resume_pause)
+	_style_nav_button(continue_btn, true)
+	buttons.add_child(continue_btn)
+
+	var restart_btn := Button.new()
+	restart_btn.text = "REINICIAR PROGRESSO"
+	restart_btn.custom_minimum_size = Vector2(270, 44)
+	restart_btn.pressed.connect(_restart_progress_from_pause)
+	_style_nav_button(restart_btn, false)
+	buttons.add_child(restart_btn)
+
+	var quit_btn := Button.new()
+	quit_btn.text = "SAIR DO JOGO"
+	quit_btn.custom_minimum_size = Vector2(270, 44)
+	quit_btn.pressed.connect(_quit_game)
+	_style_nav_button(quit_btn, false)
+	buttons.add_child(quit_btn)
 
 
 func _build_quiz_panel() -> void:
@@ -596,15 +845,86 @@ func _refresh_progress() -> void:
 	var total: int = GameProgress.total_count()
 	if progress_label:
 		progress_label.text = "Concluídos: %d / %d" % [done, total]
+	if pause_progress_label:
+		pause_progress_label.text = "Progresso atual: %d / %d estações concluídas" % [done, total]
 	if progress_bar and total > 0:
 		var target: float = float(done) / float(total)
 		create_tween().tween_property(progress_bar, "value", target, 0.5) \
 			.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 
 
+# ── Menus de início e pause ───────────────────────────────────────────────────
+
+func _show_start_screen() -> void:
+	game_started = false
+	pause_open = false
+	quiz_open = false
+	showing_results = false
+	quiz_root.visible = false
+	victory_root.visible = false
+	pause_root.visible = false
+	start_root.visible = true
+	_set_gameplay_hud_visible(false)
+	set_prompt("")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	_pop_in(start_panel)
+
+
+func _start_game() -> void:
+	game_started = true
+	start_root.visible = false
+	_set_gameplay_hud_visible(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _open_pause() -> void:
+	if not game_started or pause_open or quiz_open or victory_root.visible or start_root.visible:
+		return
+	pause_open = true
+	pause_root.visible = true
+	_set_gameplay_hud_visible(false)
+	set_prompt("")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	_pop_in(pause_panel)
+	get_tree().paused = true
+
+
+func _resume_pause() -> void:
+	if not pause_open:
+		return
+	get_tree().paused = false
+	pause_open = false
+	pause_root.visible = false
+	_set_gameplay_hud_visible(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _restart_progress_from_pause() -> void:
+	GameProgress.reset()
+	_resume_pause()
+
+
+func _quit_game() -> void:
+	get_tree().paused = false
+	get_tree().quit()
+
+
+func _set_gameplay_hud_visible(on: bool) -> void:
+	if crosshair:
+		crosshair.visible = on
+	if prompt_label:
+		prompt_label.visible = on
+	if progress_label:
+		progress_label.visible = on
+	if progress_bar:
+		progress_bar.visible = on
+
+
 # ── Fluxo do quiz ──────────────────────────────────────────────────────────────
 
 func open_quiz(data_file: String, id: String, accent: Color = COL_ACCENT) -> void:
+	if not game_started or pause_open or start_root.visible:
+		return
 	var data: Dictionary = _load_item_data(data_file)
 	if (data.get("questions", []) as Array).is_empty():
 		return
@@ -628,7 +948,7 @@ func open_quiz(data_file: String, id: String, accent: Color = COL_ACCENT) -> voi
 	refazer_btn.visible = false
 	panel_title_label.text = str(data.get("name", id)).to_upper()
 
-	crosshair.visible = false
+	_set_gameplay_hud_visible(false)
 	set_prompt("")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	quiz_root.visible = true
@@ -640,8 +960,8 @@ func close_quiz() -> void:
 	quiz_open = false
 	showing_results = false
 	quiz_root.visible = false
-	crosshair.visible = true
-	if not victory_root.visible:
+	if game_started and not victory_root.visible and not pause_open and not start_root.visible:
+		_set_gameplay_hud_visible(true)
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
@@ -867,7 +1187,7 @@ func _restart_quiz() -> void:
 func _on_completed() -> void:
 	quiz_open = false
 	quiz_root.visible = false
-	crosshair.visible = false
+	_set_gameplay_hud_visible(false)
 	set_prompt("")
 	victory_label.text = "Você dominou todos os %d objetos do laboratório\n\nTempo total: %s   ·   Erros: %d" % \
 		[GameProgress.total_count(), _fmt_duration(GameProgress.total_time_ms()), GameProgress.total_wrong()]
@@ -884,8 +1204,9 @@ func _on_victory_restart() -> void:
 
 func _close_victory() -> void:
 	victory_root.visible = false
-	crosshair.visible = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if game_started and not pause_open and not start_root.visible:
+		_set_gameplay_hud_visible(true)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 # ── Input ─────────────────────────────────────────────────────────────────────
@@ -893,10 +1214,18 @@ func _close_victory() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
 		return
-	if victory_root.visible:
+	if start_root.visible:
+		get_viewport().set_input_as_handled()
+		return
+	if pause_open:
+		_resume_pause()
+	elif victory_root.visible:
 		_close_victory()
 	elif quiz_open:
 		close_quiz()
+	elif game_started:
+		_open_pause()
+	get_viewport().set_input_as_handled()
 
 
 # ── Dados ───────────────────────────────────────────────────────────────────
